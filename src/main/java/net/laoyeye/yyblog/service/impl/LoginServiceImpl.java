@@ -2,17 +2,9 @@ package net.laoyeye.yyblog.service.impl;
 
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import com.qq.connect.api.OpenID;
-import com.qq.connect.api.qzone.UserInfo;
-import com.qq.connect.javabeans.AccessToken;
-import com.qq.connect.javabeans.qzone.UserInfoBean;
-import com.qq.connect.oauth.Oauth;
 import net.laoyeye.yyblog.common.YYBlogResult;
 import net.laoyeye.yyblog.common.utils.IDUtils;
 import net.laoyeye.yyblog.mapper.UserMapper;
@@ -21,13 +13,14 @@ import net.laoyeye.yyblog.service.LoginService;
 
 @Service
 public class LoginServiceImpl implements LoginService {
+
     @Autowired
     private UserMapper userMapper;
 
     @Override
     public YYBlogResult login(HttpServletRequest request) {
         try {
-            // 第一步获取授权码
+      /*      // 第一步获取授权码
             // 第二步获取accesstoken
             AccessToken accessTokenObj = new Oauth().getAccessTokenByRequest(request);
             String accessToken = accessTokenObj.getAccessToken();
@@ -52,7 +45,7 @@ public class LoginServiceImpl implements LoginService {
             }
             UsernamePasswordToken token = new UsernamePasswordToken(userOpenId, userOpenId);
             Subject subject = SecurityUtils.getSubject();
-            subject.login(token);
+            subject.login(token);*/
             return YYBlogResult.ok();
         } catch (Exception e) {
             //LOG

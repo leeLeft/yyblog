@@ -11,9 +11,9 @@ spring:
     druid:
       db-type: mysql
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://xxxxxx:3306/xxxx?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
-      username: xxxxx
-      password: xxxx
+      url: jdbc:mysql://127.0.0.1:3306/febs_security?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+      username: root
+      password: root
       initial-size: 5
       min-idle: 5
       max-active: 20
@@ -31,11 +31,13 @@ spring:
       max-file-size: 20MB
       max-request-size: 100MB
 server:
-  port: 8080
+  port: 8081
   tomcat:
     uri-encoding: utf-8
     max-connections: 2000
     max-threads:  2000
+  servlet:
+    context-path: /yyblog
 mybatis:
   configuration:
     mapUnderscoreToCamelCase: true

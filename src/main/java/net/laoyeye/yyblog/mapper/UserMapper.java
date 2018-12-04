@@ -5,7 +5,9 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import net.laoyeye.yyblog.model.UserDO;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserMapper {
 
     UserDO getUserByName(String username);
